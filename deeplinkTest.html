@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="./mui.min.css" rel="stylesheet" />
+</head>
+<style>
+    .area {
+        margin: 20px auto 0px auto;
+    }
+
+    .mui-input-group {
+        margin-top: 10px;
+    }
+
+    .mui-input-group:first-child {
+        margin-top: 20px;
+    }
+
+    .mui-input-group label {
+        width: 22%;
+        font-size: 14px;
+    }
+
+    .mui-input-row label {
+        padding: 11px 6px;
+    }
+
+    .mui-input-row label~input,
+    .mui-input-row label~select,
+    .mui-input-row label~textarea {
+        width: 78%;
+    }
+
+    .mui-checkbox input[type=checkbox],
+    .mui-radio input[type=radio] {
+        top: 6px;
+    }
+#login1{
+    width: 50%;
+    margin: auto
+}
+#openApp {
+    margin-top: 100px;
+}
+    .mui-content-padded {
+        margin-top: 25px;
+    }
+
+    .mui-btn {
+        padding: 10px;
+    }
+
+    .link-area {
+        display: block;
+        margin-top: 25px;
+        text-align: center;
+    }
+
+    .spliter {
+        color: #bbb;
+        padding: 0px 8px;
+    }
+
+    .oauth-area {
+        position: absolute;
+        bottom: 20px;
+        left: 0px;
+        text-align: center;
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .oauth-area .oauth-btn {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background-size: 30px 30px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        margin: 0px 20px;
+        /*-webkit-filter: grayscale(100%); */
+        border: solid 1px #ddd;
+        border-radius: 25px;
+    }
+
+    .oauth-area .oauth-btn:active {
+        border: solid 1px #aaa;
+    }
+
+    .oauth-area .oauth-btn.disabled {
+        background-color: #ddd;
+    }
+</style>
+
+<body>
+    <header class="mui-bar mui-bar-nav">
+        <h1 class="mui-title">deeplink 测试</h1>
+    </header>
+    <div class="mui-content">
+        <form id='login-form' class="mui-input-group">
+            <div class="mui-input-row">
+                <label>短链 </label>
+                <input id='androidurl' type="text" class="mui-input-clear mui-input" placeholder="请输入短链">
+            </div>
+        </form>
+
+        <div class="mui-content-padded">
+            <div class="mui-text-center">
+                <button id='login1' class="mui-btn mui-btn-block mui-btn-yellow">确定</button>
+            </div>
+
+            <a id="openApp" class="mui-btn mui-btn-block mui-btn-primary" href="">打开应用</a>
+        </div>
+    </div>
+    <div class="mui-content-padded oauth-area">
+
+    </div>
+</body>
+<script>
+    window.onload = function () {
+        var login1Button = document.getElementById('login1');
+        var androidurl = document.getElementById('androidurl');
+        var iosurl = document.getElementById('iosurl');
+        var openApp = document.getElementById('openApp');
+        login1Button.addEventListener('click', function (event) {
+            openApp.href = androidurl.value
+            alert(androidurl.value)
+        });
+    }
+</script>
+
+</html>
